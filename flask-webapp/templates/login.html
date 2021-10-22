@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/login.css') }}">
+<div class="login-card">
+    <div class="row">
+        <div class="col-lg-6 col-12 col-md-6 col-sm-12">
+            <div class="login-part1">
+                <p class="heading">Welcome Back!</p>
+                <p class="text">To keep connected with us please login with your personal info</p>
+                <img class="login-img" src="">
+                <p class="text" style="display:inline-block;text-align: left;margin-left: 2%;">Need an Account?</p>
+                <a class="register-here" href="/register">Sign Up</a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-12 col-md-6 col-sm-12">
+            <div class="login-container col-lg-12">
+                <form style="margin-top:80px;" action="/login_validation" method="post">
+                    <div class="form-group">
+                        <label for="username" class="label">Username</label>
+                        <input
+                            type="text"
+                            class="form-control input-field"
+                            name="username"
+                            id="username"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="label">Password</label>
+                        <input
+                            type="password"
+                            class="form-control input-field"
+                            name="password"
+                            style=" margin-bottom:15px;"
+                            id="password"
+                        >
+                        <small class="form-text">
+                            <a id="btn-text" href="">Forgot Password?</a>
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-login">Login</button>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

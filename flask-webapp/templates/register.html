@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %} Register {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/register.css') }}">
+<div class="register-card">
+    <div class="row">
+        <div class="col-lg-6 col-12 col-md-6 col-sm-12">
+            <div class="register-part1">
+                <p class="heading">Hello, Friend!</p>
+                <p class="text">Enter your personal details and start journey with us</p>
+                <img class="register-img" src="{{ url_for('static', filename = '') }}">
+                <p class="text" style="display:inline-block;text-align: left;margin-left: 2%;">Already have an Account?</p>
+                <a class="login-here" href="/login">Login here</a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-12 col-md-6 col-sm-12">
+            <div class="login-container col-lg-12">
+                <form style="margin-top:80px;" action="" method="post">
+                    <div class="form-group">
+                        <label for="username" class="label">Username</label>
+                        <input
+                            type="text"
+                            class="form-control input-field"
+                            name="username"
+                            id="username"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="label">Email</label>
+                        <input
+                            type="email"
+                            class="form-control input-field"
+                            name="email"
+                            id="email"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="label">Password</label>
+                        <input
+                            type="password"
+                            class="form-control input-field"
+                            name="password"
+                            id="password"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="label">Confirm Password</label>
+                        <input
+                            type="password"
+                            class="form-control input-field"
+                            name="confirm-password"
+                            id="confirm-password"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-register">Sign Up</button>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

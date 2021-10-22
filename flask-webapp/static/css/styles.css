@@ -1,0 +1,336 @@
+body {
+  font-size: 10px;
+}
+#header {
+  background-color: #0a014f;
+  font-family: "Nunito", sans-serif;
+  padding: 1%;
+}
+.dropdown-item:focus {
+  background-color: #c9b8e9;
+  color: #fae8eb;
+}
+.dropdown-item:active {
+  background-color: #c9b8e9;
+  color: #fae8eb;
+}
+
+.nav-link {
+  font-size: 18px;
+  line-height: 24.55px;
+  color: #fae8eb;
+  margin-left: 45px;
+}
+.dropdown-item {
+  font-size: 18px;
+  color: #fae8eb;
+  background-color: #0a014f;
+  margin-left: 0px;
+  margin: 5% 0% 5% 0%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border: 1px solid #f05d87;
+}
+.dropdown-menu {
+  background-color: #0a014f;
+  margin-left: 45px;
+}
+.nav-link:hover {
+  color: #5a40ab;
+}
+#sign-up {
+  margin-right: 35px;
+}
+.btn-profile {
+  background-color: #f05d87;
+  color: #fae8eb;
+  padding: 12px 35px 12px 35px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+}
+.btn-arrow {
+  background-color: #f05d87;
+  color: #fae8eb;
+  border-radius: 8px;
+}
+#login-navbtn {
+  border: 2px solid #f05d87;
+  color: #fae8eb;
+  padding: 12px 35px 12px 35px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+}
+#login-navbtn:hover {
+  background-color: #f05d87;
+  color: white;
+}
+.navbar-brand.logo {
+  background: transparent;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #141414;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  margin-left: 10%;
+  text-align: left;
+  color: #fafafa;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.overlay-top {
+  margin-bottom: 60%;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media screen and (max-device-width: 450px) {
+  #login-navbtn2 {
+    margin-left: 70%;
+  }
+  #login-navbtn {
+    border: 2px solid #f05d87;
+    color: #fafafa;
+    padding: 2% 4%;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  #sign-up {
+    margin-right: 0px;
+  }
+}
+
+#login-navbtn2 {
+  border: 2px solid #f05d87;
+  color: #fafafa;
+  font-size: 1.4rem;
+  border-radius: 8px;
+  width: 25%;
+  height: auto;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Nunito", sans-serif;
+}
+#login-navbtn2:hover {
+  border: 2px solid #f05d87;
+  color: #fafafa;
+}
+.overlay-link {
+  background-color: #141414;
+}
+
+.overlay-menu {
+  background-color: #141414;
+  margin-left: 45px;
+}
+.copyrights2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Nunito", sans-serif;
+  color: #fafafacc;
+  margin-bottom: 10%;
+}
+
+footer {
+  width: 100%;
+  background-color: #0a014f;
+  color: #fafafa;
+  padding: 1%;
+  font-family: "Nunito", sans-serif;
+}
+.nav-link {
+  font-size: 18px;
+  line-height: 24.55px;
+  color: #fafafa;
+}
+.nav-link:hover {
+  color: #5a40ab;
+}
+.footer-icon {
+  color: #5b34d6;
+  height: 20px;
+  width: 15px;
+  margin-bottom: 0px;
+}
+.footer-icon.fb {
+  width: 8px;
+}
+body {
+  overflow-x: hidden;
+}
+.email-input1 {
+  width: 60%;
+  height: 58px;
+  font-size: 18px;
+  background-color: #141414;
+  border-radius: 12px 0px 0px 12px;
+  border: 1px solid #5a40ab;
+}
+.copyrights {
+  margin-bottom: 57px;
+  font-family: "Nunito", sans-serif;
+  font-size: 24px;
+  color: #fafafacc;
+}
+.apply-btn {
+  border: 1px solid #5a40ab;
+  color: #fafafa;
+  background-color: #5a40ab;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 30%;
+  border-radius: 0px 12px 12px 0px;
+  font-family: "Nunito", sans-serif;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 50px;
+  z-index: 99;
+  border: none;
+  border: 2px solid black;
+  outline: none;
+  background-color: #5a40ab;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.quick-links {
+  margin-top: 107px;
+  margin-bottom: 80px;
+  margin-left: 80px;
+}
+
+#myBtn:hover {
+  background-color: white;
+  border: 3px solid #5a40ab;
+}
+
+.footer-btn {
+  margin-top: 162px;
+  margin-left: 10%;
+}
+.footer-logo-icon {
+  margin-top: 160px;
+  text-align: center;
+}
+
+@media screen and (max-device-width: 375px) {
+  .copyrights {
+    margin-left: 0px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .apply-btn {
+    font-size: 18px;
+    width: 30%;
+    font-size: 13px;
+    border-radius: 0px 6px 6px 0px;
+  }
+  .email-input1 {
+    width: 60%;
+    font-size: 13px;
+    height: 39px;
+    border-radius: 6px 0px 0px 6px;
+  }
+  .footer-btn {
+    margin-top: 52px;
+    text-align: center;
+    margin-left: 0px;
+    margin-bottom: 90px;
+  }
+  .quick-links {
+    margin-left: 19px;
+    text-align: left;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+  .form-inline {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .footer-logo-icon {
+    padding-left: 38px;
+    margin-top: 50px;
+    text-align: left;
+  }
+  .quick-links {
+    margin-left: -38px;
+  }
+  #myBtn {
+    border-radius: 50px;
+    padding: 1.5%;
+  }
+}
+
+@media screen and (max-device-width: 767px) {
+  .quick-links {
+    margin-left: 0px;
+  }
+  .footer-logo-icon {
+    margin-top: 10%;
+  }
+
+  .footer-btn {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  footer {
+    padding: 10%;
+  }
+  .copyrights {
+    text-align: center;
+  }
+}

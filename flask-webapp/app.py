@@ -31,6 +31,23 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+
+@app.route('/login_validation', methods=['POST'])
+def loginValidation():
+    username = request.form.get('username')
+    password = request.form.get('password')
+    return "The email and password is {} {}".format(username, password)
+
+
 @app.route('/predict')
 def upload():
     return render_template('predict.html')
@@ -40,7 +57,7 @@ def upload():
 def make_prediction():
     if request.method == 'POST':
         # Getting the file from post request
-        f = request.files['img']
+        f = request.files['plant-img']
 
         # Saving the file to ./img-uploads
         basepath = os.path.dirname(__file__)

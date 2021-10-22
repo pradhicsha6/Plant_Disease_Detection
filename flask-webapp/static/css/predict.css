@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,700,500,300);
+
+.selectFile {
+  margin: 10% auto 10% auto;
+  background: radial-gradient(ellipse at center, #eb6a5a 0, #c9402f 100%);
+  width: 60%;
+  height: 100%;
+  border: 5px dashed white;
+  color: white;
+  padding: 8%;
+  font-size: 1.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.icon {
+  text-align: center;
+  font-size: 8em;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.zone label,
+.zone input {
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-radius: 5px;
+}
+.zone label {
+  background: #fff;
+  color: #eb6a5a;
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 50px;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 400;
+  box-shadow: 0 1px 1px gray;
+}
+.zone input[type="file"] {
+  opacity: 0;
+}
+.zone.in {
+  color: white;
+  border-color: white;
+  background: radial-gradient(ellipse at center, #eb6a5a 0, #c9402f 100%);
+}
+.zone.in i {
+  color: #fff;
+}
+.zone.in label {
+  background: #fff;
+  color: #eb6a5a;
+}
+.zone.hover {
+  color: gray;
+  border-color: white;
+  background: #fff;
+  border: 5px dashed gray;
+}
+.zone.hover i {
+  color: #eb6a5a;
+}
+.zone.hover label {
+  background: #fff;
+  color: #eb6a5a;
+}
+.zone.fade {
+  transition: all 0.3s ease-out;
+  opacity: 1;
+}
