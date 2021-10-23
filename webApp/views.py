@@ -66,4 +66,4 @@ def make_prediction():
         index = np.argmax(a)
         print('Prediction:', CLASS[index])
         result = CLASS[index]
-    return render_template('predict.html', prediction_result=result)
+    return render_template('predict.html', prediction_result=result,user=current_user)

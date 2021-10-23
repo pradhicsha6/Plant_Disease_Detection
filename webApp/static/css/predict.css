@@ -2,7 +2,7 @@
 
 .selectFile {
   margin: 10% auto 10% auto;
-  background: radial-gradient(ellipse at center, #eb6a5a 0, #c9402f 100%);
+  background: radial-gradient(ellipse at center, #016e69 0, #004643 100%);
   width: 60%;
   height: auto;
   border: 5px dashed white;
@@ -35,8 +35,8 @@ input {
 }
 label,
 input[type="submit"] {
-  background: #fff;
-  color: #eb6a5a;
+  background: rgb(194, 194, 194);
+  color: #004643;
   display: inline-block;
   font-size: 1.2em;
   line-height: 50px;

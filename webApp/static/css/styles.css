@@ -357,7 +357,7 @@ body {
   background-color: #49beaa;
   color: #000;
 }
-.alert-danger {
+.alert-error {
   background-color: #b10f2e;
 }
 .alert-warning {
