@@ -1,0 +1,7 @@
+python
+tensorflow
+flask
+gevent
+flask-Login
+flask_migrate
+Flask-SQLAlchemy

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Predict Disease {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/predict.css') }}">
+<div class="container  text-center">
+    <h1> Predict the Disease of your Plant!!</h1>
+    <br>
+    {% if prediction_result!=0 %}
+    <h1> Prediction Result : {{ prediction_result}}</h1>
+    {% endif %}
+    <div class="selectFile">
+        <form action="predict" method="POST" enctype="multipart/form-data">
+            <div class="upload-container">
+                <i class="fa fa-cloud-upload icon"></i>
+                <h2>Drag and drop your Plant Image here</h2>
+                <span>OR</span>
+                <br>
+                <label for="plant-img">Select Image</label>
+                <input type="file" name="plant-img" id="plant-img">
+                <br>
+                <input type="submit" value="Predict Disease!">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

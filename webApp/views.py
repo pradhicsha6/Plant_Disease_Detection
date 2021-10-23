@@ -1,17 +1,20 @@
+from flask import Blueprint, render_template, request, flash, jsonify
+from flask_login import login_required, current_user
+from . import db
+from flask import Flask, redirect, url_for
+from werkzeug.utils import secure_filename
+import json
+from flask.helpers import flash
+
+# import modules for Prediction
 from tensorflow import keras
 from tensorflow.keras.preprocessing import image
 import os
 import tensorflow as tf
 import numpy as np
 
-# Flask utils
-from flask import Flask, redirect, url_for, request, render_template
-from werkzeug.utils import secure_filename
 
-# Defining the flask app
-app = Flask(__name__)
-
-# Model saved with Keras model.save()
+views = Blueprint('views', __name__)
 
 model = tf.keras.models.load_model('SampleModel.h5', compile=False)
 
@@ -26,38 +29,23 @@ def predict_model(img_path, model):
     return predictions
 
 
-@app.route('/', methods=['GET'])
+@views.route('/', methods=['GET', 'POST'])
+@login_required
 def index():
-    return render_template('index.html')
+    return render_template('index.html', user=current_user)
 
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
-
-@app.route('/register')
-def register():
-    return render_template('register.html')
-
-
-@app.route('/login_validation', methods=['POST'])
-def loginValidation():
-    username = request.form.get('username')
-    password = request.form.get('password')
-    return "The email and password is {} {}".format(username, password)
-
-
-@app.route('/predict')
-def upload():
-    return render_template('predict.html')
-
-
-@app.route('/prediction-result', methods=['GET', 'POST'])
+@views.route('/predict', methods=['GET', 'POST'])
 def make_prediction():
+    result = 0
     if request.method == 'POST':
         # Getting the file from post request
         f = request.files['plant-img']
+
+        if f.filename == "":
+            flash("Please select a proper image!", category="error")
+            pass
+
 
         # Saving the file to ./img-uploads
         basepath = os.path.dirname(__file__)
@@ -78,9 +66,4 @@ def make_prediction():
         index = np.argmax(a)
         print('Prediction:', CLASS[index])
         result = CLASS[index]
-        return result
-    return None
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    return render_template('predict.html', prediction_result=result)

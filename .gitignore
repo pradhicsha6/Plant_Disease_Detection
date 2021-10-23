@@ -1,0 +1,6 @@
+.vscode
+webApp/__pycache__
+webApp/database.db
+img-uploads/
+__pycache__
+migrations

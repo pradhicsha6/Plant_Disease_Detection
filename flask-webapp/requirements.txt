@@ -1,5 +1,0 @@
-python
-tensorflow
-flask
-gevent
-Flask-Login==0.3.2
