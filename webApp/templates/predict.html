@@ -7,7 +7,7 @@
     <br>
     {% if prediction_result!=0 %}
     <h1> Prediction Result : {{ prediction_result}}</h1>
-    {% endif %}
+    {% else %}
     <div class="selectFile">
         <form action="predict" method="POST" enctype="multipart/form-data">
             <div class="upload-container">
@@ -22,5 +22,6 @@
             </div>
         </form>
     </div>
+    {% endif %}
 </div>
 {% endblock %}

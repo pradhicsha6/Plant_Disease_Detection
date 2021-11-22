@@ -12,21 +12,35 @@ from tensorflow.keras.preprocessing import image
 import os
 import tensorflow as tf
 import numpy as np
+from tensorflow.keras.models import load_model
 
+
+MODEL_PATH = 'Model_Inception.h5'
 
 views = Blueprint('views', __name__)
 
-model = tf.keras.models.load_model('SampleModel.h5', compile=False)
+model = load_model(MODEL_PATH)
 
 
 def predict_model(img_path, model):
-    img = image.load_img(img_path, grayscale=False, target_size=(64, 64))
+    print(img_path)
+    img = image.load_img(img_path, target_size=(224, 224))
     x = image.img_to_array(img)
+    x = x/255
     x = np.expand_dims(x, axis=0)
-    x = np.array(x, 'float32')
-    x /= 255
-    predictions = model.predict(x)
-    return predictions
+
+    preds = model.predict(x)
+    preds = np.argmax(preds, axis=1)
+    if preds == 0:
+        preds = "The leaf is diseased cotton leaf"
+    elif preds == 1:
+        preds = "The leaf is diseased cotton plant"
+    elif preds == 2:
+        preds = "The leaf is fresh cotton leaf"
+    else:
+        preds = "The leaf is fresh cotton plant"
+
+    return preds
 
 
 @views.route('/', methods=['GET', 'POST'])
@@ -46,7 +60,6 @@ def make_prediction():
             flash("Please select a proper image!", category="error")
             pass
 
-
         # Saving the file to ./img-uploads
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
@@ -54,16 +67,8 @@ def make_prediction():
         f.save(file_path)
 
         # Making prediction by method model_predict
-        predictions = predict_model(file_path, model)
-        print(predictions[0])
+        preds = predict_model(file_path, model)
+        print(preds)
 
-        CLASS = ['Pepper__bell___Bacterial_spot', 'Pepper__bell___healthy', 'Potato___Early_blight',
-                 'Potato___Late_blight', 'Potato___healthy', 'Tomato_Bacterial_spot', 'Tomato_Early_blight',
-                 'Tomato_Late_blight', 'Tomato_Leaf_Mold', 'Tomato_Septoria_leaf_spot',
-                 'Tomato_Spider_mites_Two_spotted_spider_mite', 'Tomato__Target_Spot',
-                 'Tomato__Tomato_YellowLeaf__Curl_Virus', 'Tomato__Tomato_mosaic_virus', 'Tomato_healthy']
-        a = predictions[0]
-        index = np.argmax(a)
-        print('Prediction:', CLASS[index])
-        result = CLASS[index]
-    return render_template('predict.html', prediction_result=result,user=current_user)
+        result = preds
+    return render_template('predict.html', prediction_result=result, user=current_user)
