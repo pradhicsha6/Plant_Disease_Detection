@@ -14,8 +14,7 @@ import tensorflow as tf
 import numpy as np
 from tensorflow.keras.models import load_model
 
-
-MODEL_PATH = 'Model_Inception.h5'
+MODEL_PATH = 'GoogleNet.h5'
 
 views = Blueprint('views', __name__)
 
@@ -32,13 +31,17 @@ def predict_model(img_path, model):
     preds = model.predict(x)
     preds = np.argmax(preds, axis=1)
     if preds == 0:
-        preds = "The leaf is diseased cotton leaf"
+        preds = "Pepper Bell Bacterial Spot"
     elif preds == 1:
-        preds = "The leaf is diseased cotton plant"
+        preds = "Pepper Bell Healthy"
     elif preds == 2:
-        preds = "The leaf is fresh cotton leaf"
+        preds = "Potato Early Blight"
+    elif preds == 3:
+        preds = "Potato Healthy"
+    elif preds == 4:
+        preds = "Tomato Tomato Mosaic Virus"
     else:
-        preds = "The leaf is fresh cotton plant"
+        preds = "Tomato Healthy"
 
     return preds
 
