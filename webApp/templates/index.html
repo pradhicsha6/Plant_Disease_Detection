@@ -16,7 +16,11 @@
                             <h2>Plantila - Your Crop Protector</h2>
                             <p>Identify the Disease of your Plant and Treat them with Ease</p>
                             <div class="welcome-btn-group">
+                                {% if user.is_authenticated %}
+                                <a href="/predict" class="btn alazea-btn active">PREDICT DISEASE</a>
+                                {% else %}
                                 <a href="/login" class="btn alazea-btn active">GET STARTED</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

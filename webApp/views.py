@@ -47,12 +47,12 @@ def predict_model(img_path, model):
 
 
 @views.route('/', methods=['GET', 'POST'])
-@login_required
 def index():
     return render_template('index.html', user=current_user)
 
 
 @views.route('/predict', methods=['GET', 'POST'])
+@login_required
 def make_prediction():
     result = 0
     if request.method == 'POST':

@@ -58,9 +58,15 @@
                                         <li>
                                             <a href="/about">About</a>
                                         </li>
+                                        {% if user.is_authenticated %}
+                                        <li>
+                                            <a href="/logout">Logout</a>
+                                        </li>
+                                        {% else %}
                                         <li>
                                             <a href="/login">Login</a>
                                         </li>
+                                        {% endif %}
                                     </ul>
                                     <!-- Search Icon -->
                                     <div id="searchIcon">
