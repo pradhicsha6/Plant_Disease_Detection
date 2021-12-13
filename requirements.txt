@@ -5,3 +5,4 @@ gevent
 flask-Login
 flask_migrate
 Flask-SQLAlchemy
+pillow
