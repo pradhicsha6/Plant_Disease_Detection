@@ -29,7 +29,7 @@
                         <!-- Menu -->
                         <nav class="classy-navbar justify-content-between" id="alazeaNav">
                             <!-- Nav Brand -->
-                            <a href="index.html" class="nav-brand">
+                            <a href="/" class="nav-brand">
                                 <img src="{{url_for('static',filename='img/core-img/logo.png')}}" alt="">
                             </a>
                             <!-- Navbar Toggler -->
@@ -194,24 +194,28 @@
         <div class="messages">
             {% for category,message in messages %}
         {% if category == 'error' %}
-            <div class="alert alert-dismissible fade show alert-error" data-auto-dismiss="2000" role="alert">
+            <div class="alert alert-dismissible fade show alert-error"  role="alert">
                 {{message}}
                 <button
                     type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert"
+                    class="btn-close close"
+                    data-dismiss="alert"
                     aria-label="Close"
-                ></button>
+                >
+                <span aria-hidden="true">&times;</span>
+            </button>
             </div>
             {% else %}
-            <div class="alert alert-dismissible fade show alert-success" data-auto-dismiss="2000" role="alert">
+            <div class="alert alert-dismissible fade show alert-success" role="alert">
                 {{message}}
                 <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert"
-                    aria-label="Close"
-                ></button>
+                type="button"
+                class="btn-close close"
+                data-dismiss="alert"
+                aria-label="Close"
+            >
+            <span aria-hidden="true">&times;</span>
+            </button>
             </div>
             {% endif %}
         {% endfor %}
