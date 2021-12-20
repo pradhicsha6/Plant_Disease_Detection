@@ -1,16 +1,22 @@
 body {
   background-color: #fae8eb;
 }
+
+.header-area .alazea-main-menu{
+  background-color: #111111;
+}
+
+
 .login-container {
   margin: 6%;
 }
 .input-field {
   margin-top: 20px;
   height: 58px;
-  color: #0a014f;
+  color: #70c745;
   font-size: 18px;
   margin-bottom: 40px;
-  border: 1px solid #8568bc;
+  border: 1px solid #70c745;
   box-sizing: border-box;
   border-radius: 8px;
   background-color: #fae8eb;
@@ -23,7 +29,7 @@ body {
   line-height: 54px;
   margin-bottom: 5%;
   text-align: center;
-  color: #0a014f;
+  color: white;
 }
 .label {
   color: #372a2d;
@@ -33,7 +39,7 @@ body {
 }
 .btn-login {
   margin-top: 59px;
-  background-color: #8568bc;
+  background-color: #70c745;
   align-items: center;
   padding: 16px 45px;
   width: 420px;
@@ -46,7 +52,7 @@ body {
 .register-here {
   display: inline-block;
   margin-top: 59px;
-  background-color: #8568bc;
+  background-color: #70c745;
   align-items: center;
   padding: 16px 45px;
   border-radius: 40px;
@@ -65,7 +71,7 @@ body {
 }
 
 .login-card {
-  border: 2px solid #8568bc;
+  border: 2px solid #70c745;
   border-radius: 16px;
   margin: 8% 10%;
   box-shadow: 0 0 10px 10px #596477;
@@ -74,13 +80,13 @@ body {
 .login-part1 {
   padding: 2%;
   height: 100%;
-  background-color: #f05d87;
+  background-color: #007E85;
   border-radius: 16px 0px 0px 16px;
 }
 .text {
   font-size: 20px;
   font-weight: 600;
-  color: #0a014f;
+  color: white;
   font-family: "Nunito", sans-serif;
   text-align: center;
 }
@@ -125,7 +131,7 @@ body {
     border-radius: 0px 0px 0px 0px;
   }
   .login-card {
-    border: 0px solid #8568bc;
+    border: 0px solid #70c745;
     border-radius: 0px;
     margin: 0% 0%;
     box-shadow: 0 0 0px 0px #596477;
