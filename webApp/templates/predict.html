@@ -3,10 +3,11 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename = 'css/predict.css') }}">
 <div class="container  text-center">
-    <h1> Predict the Disease of your Plant!!</h1>
+    <h1 style="margin-top: 100px;"> Predict the Disease of your Plant!!</h1>
     <br>
     {% if prediction_result!=0 %}
     <h1> Prediction Result : {{ prediction_result}}</h1>
+    <img src="{{ user_image }}" alt="User Image">
     {% else %}
     <div class="selectFile">
         <form action="predict" method="POST" enctype="multipart/form-data">

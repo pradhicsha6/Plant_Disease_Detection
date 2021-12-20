@@ -1,7 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:400,700,500,300);
 
+.header-area .alazea-main-menu{
+  background-color: #111111;
+}
+
 .selectFile {
-  margin: 10% auto 10% auto;
+  margin: 8% auto 8% auto;
   background: radial-gradient(ellipse at center, #016e69 0, #004643 100%);
   width: 60%;
   height: auto;

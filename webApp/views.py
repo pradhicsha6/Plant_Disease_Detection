@@ -21,7 +21,7 @@ views = Blueprint('views', __name__)
 model = load_model(MODEL_PATH)
 
 
-def predict_model(img_path, model):
+def predict_model(img_path, model,img_file):
     print(img_path)
     img = image.load_img(img_path, target_size=(224, 224))
     x = image.img_to_array(img)
@@ -44,6 +44,9 @@ def predict_model(img_path, model):
         preds = "Tomato Healthy"
 
     return preds
+    full_filename = path.join(app.config['UPLOAD_FOLDER'], img_file)
+    print(full_filename)
+    return render_template("predict.html", user_image = full_filename)
 
 
 @views.route('/', methods=['GET', 'POST'])
@@ -66,12 +69,11 @@ def make_prediction():
         # Saving the file to ./img-uploads
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
-            basepath, 'img-uploads', secure_filename(f.filename))
+            basepath, 'static\img-uploads', secure_filename(f.filename))
         f.save(file_path)
 
         # Making prediction by method model_predict
-        preds = predict_model(file_path, model)
+        preds = predict_model(file_path,model,secure_filename(f.filename))
         print(preds)
-
         result = preds
     return render_template('predict.html', prediction_result=result, user=current_user)

@@ -7,11 +7,13 @@ from flask_migrate import Migrate
 db = SQLAlchemy()
 DB_NAME = "database.db"
 migrate = Migrate()
+PLANTIMG_FOLDER = path.join('static', 'img-uploads')
 
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = "9dcaa8494e292cce38fa4494"
+    app.config['UPLOAD_FOLDER'] = PLANTIMG_FOLDER
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
     migrate.init_app(app, db)
