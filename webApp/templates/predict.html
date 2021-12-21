@@ -6,14 +6,16 @@
     <h1 style="margin-top: 100px;"> Predict the Disease of your Plant!!</h1>
     <br>
     {% if prediction_result!=0 %}
-    <h1> Prediction Result : {{ prediction_result}}</h1>
-    <img src="{{ user_image }}" alt="User Image">
+    <div style="height:400px;">
+        <h1> Prediction Result : {{ prediction_result}}</h1>
+    </div>
+    <!-- <img src="{{ user_image }}" alt="User Image"> -->
     {% else %}
     <div class="selectFile">
         <form action="predict" method="POST" enctype="multipart/form-data">
             <div class="upload-container">
                 <i class="fa fa-cloud-upload icon"></i>
-                <h2>Drag and drop your Plant Image here</h2>
+                <h2>Upload your Plant Image here</h2>
                 <span>OR</span>
                 <br>
                 <label for="plant-img">Select Image</label>
