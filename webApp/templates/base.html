@@ -1,103 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Plantila - Plant Disease Detection{% endblock %}</title>
-        <!-- Favicon -->
-        <link rel="icon" href="{{url_for('static',filename='img/core-img/favicon.ico')}}">
-        <!---Adding Basic Styles-->
-        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
-        <!--Font Awesome Icons-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <!-- Preloader -->
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-circle"></div>
-            <div class="preloader-img">
-                <img src="{{url_for('static',filename='img/core-img/leaf.png')}}" alt="">
-            </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Plantila - Plant Disease Detection{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{url_for('static',filename='img/core-img/favicon.ico')}}">
+    <!---Adding Basic Styles-->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="{{url_for('static',filename='img/core-img/leaf.png')}}" alt="">
         </div>
-        <!-- ##### Header Area Start ##### -->
-        <header class="header-area">
-            <!-- ***** Navbar Area ***** -->
-            <div class="alazea-main-menu">
-                <div class="classy-nav-container breakpoint-off">
-                    <div class="container">
+    </div>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- ***** Navbar Area ***** -->
+        <div class="plantila-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="plantilaNav">
+                        <!-- Nav Brand -->
+                        <a href="/" class="nav-brand">
+                            <img src="{{url_for('static',filename='img/core-img/logo.png')}}" alt="">
+                        </a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler">
+                                    <span></span>
+                            <span></span>
+                            <span></span>
+                            </span>
+                        </div>
                         <!-- Menu -->
-                        <nav class="classy-navbar justify-content-between" id="alazeaNav">
-                            <!-- Nav Brand -->
-                            <a href="/" class="nav-brand">
-                                <img src="{{url_for('static',filename='img/core-img/logo.png')}}" alt="">
-                            </a>
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </div>
-                            <!-- Menu -->
-                            <div class="classy-menu">
-                                <!-- Close Button -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap">
-                                        <span class="top"></span>
-                                        <span class="bottom"></span>
-                                    </div>
+                        <div class="classy-menu">
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap">
+                                    <span class="top"></span>
+                                    <span class="bottom"></span>
                                 </div>
-                                <!-- Navbar Start -->
-                                <div class="classynav">
-                                    <ul>
-                                        <li>
-                                            <a href="/">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="/about">About</a>
-                                        </li>
-                                        {% if user.is_authenticated %}
-                                        <li>
-                                            <a href="/logout">Logout</a>
-                                        </li>
-                                        {% else %}
-                                        <li>
-                                            <a href="/login">Login</a>
-                                        </li>
-                                        {% endif %}
-                                    </ul>
-                                    <!-- Search Icon -->
-                                    <div id="searchIcon">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </div>
+                            </div>
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li>
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about">About</a>
+                                    </li>
+                                    {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="/logout">Logout</a>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a href="/login">Login</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                                <!-- Search Icon -->
+                                <div id="searchIcon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
                                 </div>
-                                <!-- Navbar End -->
                             </div>
-                        </nav>
-                        <!-- Search Form -->
-                        <div class="search-form">
-                            <form action="#" method="get">
-                                <input
-                                    type="search"
-                                    name="search"
-                                    id="search"
-                                    placeholder="Type keywords &amp; press enter..."
-                                >
-                                <button type="submit" class="d-none"></button>
-                            </form>
-                            <!-- Close Icon -->
-                            <div class="closeIcon">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <!-- Close Icon -->
+                        <div class="closeIcon">
+                            <i class="fa fa-times" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- ##### Header Area End ##### -->
-        <!-- <nav id="header" class="navbar navbar-expand-lg">
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    <!-- <nav id="header" class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand logo" href="">
                     <img src="" style="width: 119px;">
@@ -162,7 +159,7 @@
                 {% endif %}
             </div>
         </nav> -->
-        <!-- <div id="myNav" class="overlay">
+    <!-- <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
                 <div class="overlay-top">
@@ -195,182 +192,168 @@
                 </div>
             </div>
         </div> -->
-        {% with messages= get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        <div class="messages">
-            {% for category,message in messages %}
-        {% if category == 'error' %}
-            <div class="alert alert-dismissible fade show alert-error"  role="alert">
-                {{message}}
-                <button
-                    type="button"
-                    class="btn-close close"
-                    data-dismiss="alert"
-                    aria-label="Close"
-                >
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            {% else %}
-            <div class="alert alert-dismissible fade show alert-success" role="alert">
-                {{message}}
-                <button
-                type="button"
-                class="btn-close close"
-                data-dismiss="alert"
-                aria-label="Close"
-            >
-            <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            {% endif %}
-        {% endfor %}
-        {% endif %}
+    {% with messages= get_flashed_messages(with_categories=true) %} {% if messages %}
+    <div class="messages">
+        {% for category,message in messages %} {% if category == 'error' %}
+        <div class="alert alert-dismissible fade show alert-error" role="alert">
+            {{message}}
+            <button type="button" class="btn-close close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
         </div>
-        {% endwith %}
-        <div>
-            {% block content %}
-
-            {% endblock %}
-            <script src="{{ url_for('static',filename ='js/bootstrap-auto-dismiss-alert.js')}}"></script>
+        {% else %}
+        <div class="alert alert-dismissible fade show alert-success" role="alert">
+            {{message}}
+            <button type="button" class="btn-close close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
         </div>
-        <!-- ##### Footer Area Start ##### -->
-        <footer class="footer-area bg-img" style="background-image: url('https://i.ibb.co/8xHPMWx/3.jpg');">
-            <!-- Main Footer Area -->
-            <div class="main-footer-area">
-                <div class="container">
-                    <div class="row">
-                        <!-- Single Footer Widget -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-footer-widget">
-                                <div class="footer-logo mb-30">
-                                    <a href="#">
-                                        <img src="{{url_for('static',filename='img/core-img/logo.png')}}" alt="">
-                                    </a>
-                                </div>
-                                <p>Your All time Crop Protector</p>
-                                <div class="social-info">
-                                    <a href="#">
-                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                    </a>
-                                </div>
+        {% endif %} {% endfor %} {% endif %}
+    </div>
+    {% endwith %}
+    <div>
+        {% block content %} {% endblock %}
+        <script src="{{ url_for('static',filename ='js/bootstrap-auto-dismiss-alert.js')}}"></script>
+    </div>
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url('https://i.ibb.co/8xHPMWx/3.jpg');">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#">
+                                    <img src="{{url_for('static',filename='img/core-img/logo.png')}}" alt="">
+                                </a>
+                            </div>
+                            <p>Your All time Crop Protector</p>
+                            <div class="social-info">
+                                <a href="#">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
-                        <!-- Single Footer Widget -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-footer-widget">
-                                <div class="widget-title">
-                                    <h5>QUICK LINK</h5>
-                                </div>
-                                <nav class="widget-nav">
-                                    <ul>
-                                        <li>
-                                            <a href="/">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="/about">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="/register">Register</a>
-                                        </li>
-                                        <li>
-                                            <a href="/login">Login</a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>QUICK LINK</h5>
                             </div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li>
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="/register">Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="/login">Login</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-                        <!-- Single Footer Widget -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-footer-widget">
-                                <div class="widget-title">
-                                    <h5>BLOGS</h5>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>BLOGS</h5>
+                            </div>
+                            <!-- Single Best Seller Products -->
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <img src="{{url_for('static',filename='img/bg-img/4.jpg')}}" alt="">
                                 </div>
-                                <!-- Single Best Seller Products -->
-                                <div class="single-best-seller-product d-flex align-items-center">
-                                    <div class="product-thumbnail">
-                                        <img src="{{url_for('static',filename='img/bg-img/4.jpg')}}" alt="">
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="shop-details.html">The persistent threat of emerging plant disease pandemics to global food security</a>
-                                        <p>- CABI Blog</p>
-                                    </div>
+                                <div class="product-info">
+                                    <a href="shop-details.html">The persistent threat of emerging plant disease pandemics to global food security</a>
+                                    <p>- CABI Blog</p>
                                 </div>
-                                <!-- Single Best Seller Products -->
-                                <div class="single-best-seller-product d-flex align-items-center">
-                                    <div class="product-thumbnail">
-                                        <img src="{{url_for('static',filename='img/bg-img/5.jpg')}}" alt="">
-                                    </div>
-                                    <div class="product-info">
-                                        <a href="https://insteading.com/blog/prevent-plant-disease/">
+                            </div>
+                            <!-- Single Best Seller Products -->
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <img src="{{url_for('static',filename='img/bg-img/5.jpg')}}" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <a href="https://insteading.com/blog/prevent-plant-disease/">
                                             5 Ways To Prevent Plant Disease
                                         </a>
-                                        <p>- Insteading</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Footer Widget -->
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-footer-widget">
-                                <div class="widget-title">
-                                    <h5>CONTACT</h5>
-                                </div>
-                                <div class="contact-information">
-                                    <p>
-                                        <span>Email:</span>
-                                        plantila.support@gmail.com
-                                    </p>
+                                    <p>- Insteading</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- Footer Bottom Area -->
-            <div class="footer-bottom-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="border-line"></div>
-                        </div>
-                        <!-- Copywrite Text -->
-                        <div class="col-12 col-md-6">
-                            <div class="copywrite-text">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>CONTACT</h5>
+                            </div>
+                            <div class="contact-information">
                                 <p>
-                                    All Copyrights Reserved &copy;
-                                    <script>document.write(new Date().getFullYear())</script>
+                                    <span>Email:</span> plantila.support@gmail.com
                                 </p>
                             </div>
                         </div>
-                        <!-- Footer Nav -->
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- ##### Footer Area End ##### -->
-        <!-- ##### All Javascript Files ##### -->
-        <!-- jQuery-2.2.4 js -->
-        <script src="{{ url_for('static',filename = 'js/jquery/jquery-2.2.4.min.js')}}"></script>
-        <!-- Popper js -->
-        <script src="{{ url_for('static',filename = 'js/bootstrap/popper.min.js')}}"></script>
-        <!-- Bootstrap js -->
-        <script src="{{ url_for('static',filename = 'js/bootstrap/bootstrap.min.js')}}"></script>
-        <!-- All Plugins js -->
-        <script src="{{ url_for('static',filename = 'js/plugins/plugins.js')}}"></script>
-        <!-- Active js -->
-        <script src="{{ url_for('static',filename = 'js/active.js')}}"></script>
-    </body>
+        </div>
+        <!-- Footer Bottom Area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    </div>
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>
+                                All Copyrights Reserved &copy;
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Footer Nav -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{ url_for('static',filename = 'js/jquery/jquery-2.2.4.min.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{ url_for('static',filename = 'js/bootstrap/popper.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ url_for('static',filename = 'js/bootstrap/bootstrap.min.js')}}"></script>
+    <!-- All Plugins js -->
+    <script src="{{ url_for('static',filename = 'js/plugins/plugins.js')}}"></script>
+    <!-- Active js -->
+    <script src="{{ url_for('static',filename = 'js/active.js')}}"></script>
+</body>
+
 </html>

@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% block title %} Home {% endblock %}
-{% block content %}
+{% extends "base.html" %} {% block title %} Home {% endblock %} {% block content %}
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
     <div class="hero-post-slides owl-carousel">
@@ -17,10 +15,8 @@
                             <p>Identify the Disease of your Plant and Treat them with Ease</p>
                             <div class="welcome-btn-group">
                                 {% if user.is_authenticated %}
-                                <a href="/predict" class="btn alazea-btn active">PREDICT DISEASE</a>
-                                {% else %}
-                                <a href="/login" class="btn alazea-btn active">GET STARTED</a>
-                                {% endif %}
+                                <a href="/predict" class="btn plantila-btn active">PREDICT DISEASE</a> {% else %}
+                                <a href="/login" class="btn plantila-btn active">GET STARTED</a> {% endif %}
                             </div>
                         </div>
                     </div>
@@ -39,7 +35,9 @@
                             <h2>Diagnose & Treat Your Plant</h2>
                             <p>Plantila diagnoses infected crop and gives you the Correct Result</p>
                             <div class="welcome-btn-group">
-                                <a href="#" class="btn alazea-btn active">GET STARTED</a>
+                                {% if user.is_authenticated %}
+                                <a href="/predict" class="btn plantila-btn active">PREDICT DISEASE</a> {% else %}
+                                <a href="/login" class="btn plantila-btn active">GET STARTED</a> {% endif %}
                             </div>
                         </div>
                     </div>

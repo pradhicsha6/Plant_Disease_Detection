@@ -54,6 +54,16 @@ def index():
     return render_template('index.html', user=current_user)
 
 
+
+@views.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('about.html', user=current_user)
+
+
+@views.route('/diseases', methods=['GET', 'POST'])
+def diseases():
+    return render_template('few_disease.html', user=current_user)
+
 @views.route('/predict', methods=['GET', 'POST'])
 @login_required
 def make_prediction():

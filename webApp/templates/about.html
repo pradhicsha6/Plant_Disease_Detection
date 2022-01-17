@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> PLANT DISEASE DETECTOR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/About.css') }}">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="/" class="nav-brand">
+                <img src="{{url_for('static',filename='img/core-img/logo.png')}}" alt="">
+            </a>
+            <ul>
+                <li>
+                    <a href="/diseases" style="font-family:Lucida Sans Unicode">
+                        <b>Few Diseases</b>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="center">
+            <p style="color: #ffffff;font-size:26px;font-family:courier ;width: 100px;">
+                <center>
+                    <b>
+                            Want to know what type of disease your plant affected with,then Upload a images of plants and get to know the disease it posses and the remedies
+                            <br>
+                            and pratical video explanation to prevent further loss of plants.
+                        </b>
+                </center>
+            </p>
+        </div>
+    </div>
+    <h1 id="About" style="color:navy;font-family: Verdana ;line-height: 2.5;">
+        <strong>
+                <center>About</center>
+            </strong>
+    </h1>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F37%2F2020%2F05%2F07%2FTomato-late-blight.jpg" width="270" height="180">
+            <p style="color:black;font-size:15px;font-family: cursive;width: 250px;">The Algorithm works well with single leaf at a time, so try uploading images with one leaf</p>
+        </div>
+        <div class="column1">
+            <img src="https://www.tomatobible.com/wp-content/uploads/2021/04/tomato-yellow-leaves-1.jpg" width="270" height="180">
+            <p style="color:black;font-size:15px;font-family: cursive;width: 300px;">
+                The Algorithm won't predict when
+                <br> more leaves in one image, it is good
+                <br> at predicting one leaf at a time
+            </p>
+        </div>
+        <div class="column1.1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlUPHhyCNHe7Ti3F1cgMMjPW6i73lvfJopeA&usqp=CAU" width="280" height="250">
+            <h3 class="txt">
+                <p style="color:black;font-size:19px;font-family: cursive;width: 300px;">
+                    INSTRUCTIONS:
+                    <br> ---------------
+                    <br> 1)SELECT A IMAGE
+                    <br> 2)PRESS THE PREDICT
+                    <br> BUTTON
+                </p>
+            </h3>
+        </div>
+    </div>
+</body>
+
+</html>

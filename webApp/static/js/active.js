@@ -1,25 +1,25 @@
-(function ($) {
+(function($) {
     'use strict';
 
     var browserWindow = $(window);
 
     // :: 1.0 Preloader Active Code
-    browserWindow.on('load', function () {
-        $('.preloader').fadeOut('slow', function () {
+    browserWindow.on('load', function() {
+        $('.preloader').fadeOut('slow', function() {
             $(this).remove();
         });
     });
 
     // :: 2.0 Nav Active Code
     if ($.fn.classyNav) {
-        $('#alazeaNav').classyNav();
+        $('#plantilaNav').classyNav();
     }
 
     // :: 3.0 Search Active Code
-    $('#searchIcon').on('click', function () {
+    $('#searchIcon').on('click', function() {
         $('.search-form').toggleClass('active');
     });
-    $('.closeIcon').on('click', function () {
+    $('.closeIcon').on('click', function() {
         $('.search-form').removeClass('active');
     });
 
@@ -70,16 +70,16 @@
 
     // :: 5.0 Masonary Gallery Active Code
     if ($.fn.imagesLoaded) {
-        $('.alazea-portfolio').imagesLoaded(function () {
+        $('.plantila-portfolio').imagesLoaded(function() {
             // filter items on button click
-            $('.portfolio-filter').on('click', 'button', function () {
+            $('.portfolio-filter').on('click', 'button', function() {
                 var filterValue = $(this).attr('data-filter');
                 $grid.isotope({
                     filter: filterValue
                 });
             });
             // init Isotope
-            var $grid = $('.alazea-portfolio').isotope({
+            var $grid = $('.plantila-portfolio').isotope({
                 itemSelector: '.single_portfolio_item',
                 percentPosition: true,
                 masonry: {
@@ -148,7 +148,7 @@
 
     // :: 10.0 Sticky Active Code
     if ($.fn.sticky) {
-        $(".alazea-main-menu").sticky({
+        $(".plantila-main-menu").sticky({
             topSpacing: 0
         });
     }
@@ -159,7 +159,7 @@
     }
 
     // :: 12.0 Price Range Active Code
-    $('.slider-range-price').each(function () {
+    $('.slider-range-price').each(function() {
         var min = jQuery(this).data('min');
         var max = jQuery(this).data('max');
         var unit = jQuery(this).data('unit');
@@ -172,7 +172,7 @@
             min: min,
             max: max,
             values: [value_min, value_max],
-            slide: function (event, ui) {
+            slide: function(event, ui) {
                 var result = label_result + " " + unit + ui.values[0] + ' - ' + unit + ui.values[1];
                 console.log(t);
                 t.closest('.slider-range').find('.range-price').html(result);
@@ -181,7 +181,7 @@
     })
 
     // :: 13.0 prevent default a click
-    $('a[href="#"]').on('click', function ($) {
+    $('a[href="#"]').on('click', function($) {
         $.preventDefault();
     });
 

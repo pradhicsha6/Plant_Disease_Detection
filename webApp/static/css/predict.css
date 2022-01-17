@@ -1,60 +1,61 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:400,700,500,300);
-
-.header-area .alazea-main-menu{
-  background-color: #111111;
+.header-area .plantila-main-menu {
+    background-color: #111111;
 }
 
 .selectFile {
-  margin: 8% auto 8% auto;
-  background: radial-gradient(ellipse at center, #016e69 0, #004643 100%);
-  width: 60%;
-  height: auto;
-  border: 5px dashed white;
-  color: white;
-  padding: 2%;
-  font-size: 1.5rem;
-  font-family: "Nunito", sans-serif;
+    margin: 8% auto 8% auto;
+    background: radial-gradient(ellipse at center, #016e69 0, #004643 100%);
+    width: 60%;
+    height: auto;
+    border: 5px dashed white;
+    color: white;
+    padding: 2%;
+    font-size: 1.5rem;
+    font-family: "Nunito", sans-serif;
 }
 
 #plant-img {
-  width: 100%;
+    width: 100%;
 }
 
 .icon {
-  text-align: center;
-  font-size: 8em;
-  color: #fff;
-  margin-top: 50px;
+    text-align: center;
+    font-size: 8em;
+    color: #fff;
+    margin-top: 50px;
 }
 
 label,
 input {
-  cursor: pointer;
-  display: block;
-  height: 50px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 5px;
 }
+
 label,
 input[type="submit"] {
-  background: rgb(194, 194, 194);
-  color: #004643;
-  display: inline-block;
-  font-size: 1.2em;
-  line-height: 50px;
-  width: 40%;
-  text-align: center;
-  white-space: nowrap;
-  text-transform: uppercase;
-  font-weight: 400;
-  box-shadow: 0 1px 1px gray;
+    background: rgb(194, 194, 194);
+    color: #004643;
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 50px;
+    width: 40%;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 400;
+    box-shadow: 0 1px 1px gray;
 }
 
 input[type="submit"] {
-  width: 100%;
+    width: 100%;
 }
+
 input[type="file"] {
-  opacity: 0;
+    opacity: 0;
 }
